@@ -7,3 +7,5 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+alert("hello")
