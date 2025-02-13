@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egyszerű PWA</title>
+    <title>Trainig Timer 1.0</title>
     <link rel="manifest" href="manifest.json">
     <style>
         body {
@@ -11,14 +12,43 @@
             text-align: center;
             padding: 50px;
         }
+
+        #time {
+            font-size: 62px;
+            font-weight: bold;
+            color: green;
+        }
+
+        button {
+            border-radius: 12px;
+            font-size: 20px;
+            margin: 5px;
+            font-weight: bold;
+            /* width: 130px; */
+        }
     </style>
 </head>
+
 <body>
-    <h1>Hello, PWA!</h1>
-    <p>Ez egy egyszerű Progressive Web App.</p>
+    <h1>Training Timer</h1>
+
+    <button id="pause">.</button>
+    <button id="stop">Stop</button>
+    <br />
+    Workout:
+    <button id="set-timer-120">02:00</button>
+    <button id="set-timer-90">01:30</button>
+    <button id="set-timer-30">00:30</button>
+    <br />
+    Rest:
+    <button id="rest-30">00:30</button>
+    <button id="rest-60">01:00</button>
 
     <div id="time">02:00</div>
-   
+
+    <div id="data">.</div>
+
     <script src="app.js"></script>
 </body>
+
 </html>
