@@ -26,14 +26,18 @@
             font-weight: bold;
             /* width: 130px; */
         }
+        span {
+            cursor: cell;
+            font-size: 20px;
+        }
     </style>
 </head>
 
 <body>
     <h1>Training Timer</h1>
 
-    <button id="pause">.</button>
-    <button id="stop">Stop</button>
+    <span id="pause">.</span>
+    <span id="stop">⛔</span>
     <br />
     Workout:
     <button id="set-timer-120">02:00</button>
@@ -43,6 +47,13 @@
     Rest:
     <button id="rest-30">00:30</button>
     <button id="rest-60">01:00</button>
+
+    <select name="cars" id="cars" onclick="alert('1')">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
 
     <div id="time">02:00</div>
 

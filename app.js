@@ -74,7 +74,7 @@ window.onload = function () {
 
   function stopStart() {
     isPaused = !isPaused;
-    document.querySelector('#pause').innerHTML = isPaused ? "GO" : "PAUSE";
+    document.querySelector('#pause').innerHTML = isPaused ? "▶️" : "⏸️";
     if (isPaused) {
       document.getElementById("time").style.color = "grey";
     } else {
