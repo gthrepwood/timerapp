@@ -43,16 +43,29 @@
     <button id="set-timer-120">02:00</button>
     <button id="set-timer-90">01:30</button>
     <button id="set-timer-30">00:30</button>
+    <select name="workout-time" id="workout-time" onchange="alert('2')">
+        <option value="10">00:10</option>
+        <option value="30">00:30</option>
+        <option value="60">01:00</option>
+        <option selected value="90">01:30</option>
+        <option value="120">02:00</option>
+        <option value="180">03:00</option>
+    </select>
+    
     <br />
+
     Rest:
     <button id="rest-30">00:30</button>
     <button id="rest-60">01:00</button>
 
-    <select name="cars" id="cars" onclick="alert('1')">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
+
+    <select name="rest-time" id="rest-time" onchange="alert('2')">
+        <option value="10">00:10</option>
+        <option selected value="30">00:30</option>
+        <option value="60">01:00</option>
+        <option value="90">01:30</option>
+        <option value="120">02:00</option>
+        <option value="180">03:00</option>
       </select>
 
     <div id="time">02:00</div>
