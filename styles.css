@@ -1,0 +1,76 @@
+body {
+  text-align: center;
+  /* padding: 10px; */
+  font-family: "Courier New", Courier, monospace;
+background-color: bisque;
+
+
+  /* font: 110%/1.4 system-ui; */
+  /* margin: 0; */
+  /* padding: 10rem 2rem 50rem; */
+}
+
+#time {
+  font-size: 142px;
+  /* font-weight: bold; */
+  color: green;
+}
+
+button {
+  border-radius: 12px;
+  font-size: 20px;
+  margin: 5px;
+  font-weight: bold;
+  /* width: 130px; */
+}
+span {
+  cursor: cell;
+  font-size: 40px;
+}
+
+.selectWrapper {
+  border-radius: 36px;
+  display: inline-block;
+  overflow: hidden;
+  background: #cccccc;
+  border: 1px solid #cccccc;
+  
+}
+.selectBox {
+  /* width: 140px; */
+  /* height: 30px; */
+  font-size: 30px;
+  border: 0px;
+  outline: none;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+
+  /* Direction of the items, can be row or column */
+  flex-direction: column;
+}
+
+header,
+footer {
+  height: 70px;
+}
+
+main {
+  flex: 1;
+}
+
+.footer-table {
+  /* border: 1px greenyellow solid; */
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+h1 {
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  color: white;
+  font: 2.5em Georgia, serif;
+}

@@ -1,78 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trainig Timer 1.0</title>
-    <link rel="manifest" href="manifest.json">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
 
-        #time {
-            font-size: 62px;
-            font-weight: bold;
-            color: green;
-        }
+  <body>
+    <div class="wrapper">
+      <header><h1>Training Timer</h1></header>
+      <main>
+        <div style="height: 100px;"></div>
+        <div id="time"></div>
 
-        button {
-            border-radius: 12px;
-            font-size: 20px;
-            margin: 5px;
-            font-weight: bold;
-            /* width: 130px; */
-        }
-        span {
-            cursor: cell;
-            font-size: 20px;
-        }
-    </style>
-</head>
+        <div id="data">.</div>
+      </main>
 
-<body>
-    <h1>Training Timer</h1>
+      <footer>
+        <table class="footer-table">
+          <tr>
+            <td>
+              <span id="pause">.</span>
+            </td>
+            <td>
+              <span id="stop">⛔</span>
+            </td>
+            <td>
+              <div class="selectWrapper">
+                <select
+                  name="workout-time"
+                  id="workout-time"
+                  onchange="changeWorkout(this)"
+                  class="selectBox"
+                >
+                  <option value="10">00:10</option>
+                  <option value="30">00:30</option>
+                  <option value="60">01:00</option>
+                  <option selected value="90">01:30</option>
+                  <option value="120">02:00</option>
+                  <option value="180">03:00</option>
+                </select>
+              </div>
+            </td>
+            <td>
+                <div class="selectWrapper">
+                    <select
+                      name="rest-time"
+                      id="rest-time"
+                      onchange="changeRest(this)"
+                      class="selectBox"
+                    >
+                      <option value="10">00:10</option>
+                      <option selected value="30">00:30</option>
+                      <option value="60">01:00</option>
+                      <option value="90">01:30</option>
+                      <option value="120">02:00</option>
+                      <option value="180">03:00</option>
+                    </select>
+                  </div>
+            </td>                        
+          </tr>
+        </table>
 
-    <span id="pause">.</span>
-    <span id="stop">⛔</span>
-    <br />
-    Workout:
-    <button id="set-timer-120">02:00</button>
-    <button id="set-timer-90">01:30</button>
-    <button id="set-timer-30">00:30</button>
-    <select name="workout-time" id="workout-time" onchange="alert('2')">
-        <option value="10">00:10</option>
-        <option value="30">00:30</option>
-        <option value="60">01:00</option>
-        <option selected value="90">01:30</option>
-        <option value="120">02:00</option>
-        <option value="180">03:00</option>
-    </select>
-    
-    <br />
-
-    Rest:
-    <button id="rest-30">00:30</button>
-    <button id="rest-60">01:00</button>
-
-
-    <select name="rest-time" id="rest-time" onchange="alert('2')">
-        <option value="10">00:10</option>
-        <option selected value="30">00:30</option>
-        <option value="60">01:00</option>
-        <option value="90">01:30</option>
-        <option value="120">02:00</option>
-        <option value="180">03:00</option>
-      </select>
-
-    <div id="time">02:00</div>
-
-    <div id="data">.</div>
+      </footer>
+    </div>
 
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>
