@@ -1,3 +1,5 @@
+const talking = true;
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
     navigator.serviceWorker.register("service-worker.js").then(
@@ -97,8 +99,8 @@ if (!restTimer) {
 }
 
 var display = document.querySelector("#time");
-var snd = new Audio("boxing-bell.mp3");
-var startSnd = new Audio("startup-87026.mp3");
+var endSound = new Audio("resource/boxing-bell.mp3");
+var startSnd = new Audio("resource/startup-87026.mp3");
 
 display.textContent = getMinSecTime(workoutTimer);
 
@@ -107,7 +109,7 @@ function getMinSecTime(timer) {
   var seconds = parseInt(timer % 60, 10);
   minutes = minutes < 10 ? "0" + minutes : minutes;
   seconds = seconds < 10 ? "0" + seconds : seconds;
-  return minutes + ":" + seconds;
+  return " " + minutes + ":" + seconds + " ";
 }
 
 function setTimeOnCounter(timer, display) {
@@ -141,10 +143,12 @@ function startCountdown(duration, display) {
 
       if (timer < 6 && timer != 0) {
         snd.play();
+        log("beep()");
       }
 
       if (--timer < 0) {
-        isWorkout ? snd.play() : startSnd.play();
+        isWorkout ? endSound.play() : startSnd.play();
+        isWorkout ? say("rest now") : say("start excercise");
         clearInterval(timerInterval);
         isWorkout = !isWorkout;
         workout(isWorkout);
@@ -178,10 +182,16 @@ function stopStart(pauseValue) {
     : "red";
 }
 
+function say(text) {
+  if (talking) {
+    msg.text = text;
+    msg.lang = "en";
+    window.speechSynthesis.speak(msg);
+  }
+}
+
 function startWorkout(timer) {
-  msg.text = "Start excercise. " + timer + " sec.";
-  msg.lang = "en";
-  window.speechSynthesis.speak(msg);
+  say("Start excercise. " + timer + " sec.");
 
   clearInterval(timerInterval);
   isPaused = true;
@@ -201,6 +211,7 @@ stopStart(true);
 
 function changeWorkout(o) {
   startWorkout(o.value);
+  display.textContent = getMinSecTime(workoutTimer);
   localStorage.setItem("workoutTimer", o.value);
   log("Workout time changed to " + o.value);
 }

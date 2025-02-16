@@ -7,7 +7,7 @@
   "description": "Ez egy egyszerű Progressive Web App példa.",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "resource/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     }
