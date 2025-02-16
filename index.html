@@ -1,74 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trainig Timer 1.0</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="manifest" href="manifest.json" />
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <header><h1>Training Timer</h1></header>
-      <main>
-        <div style="height: 100px"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trainig Timer 1.0</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Training Timer</h1>
+    </header>
+    <main>
+      <div style="height: 100px"></div>
+      <div class="circlediv">
         <div id="time"></div>
-      </main>
+      </div>
+    </main>
 
-      <footer>
-        <table class="footer-table">
-          <tr>
-            <td>
-              <span id="pause">.</span>
-            </td>
-            <td>
-              <span id="stop">⛔</span>
-            </td>
-            <td>Workout</td>
-            <td>
-              <div class="selectWrapper">
-                <select
-                  name="workout-time"
-                  id="workout-time"
-                  onchange="changeWorkout(this)"
-                  class="selectBox"
-                >
-                  <option value="10">00:10</option>
-                  <option value="30">00:30</option>
-                  <option value="60">01:00</option>
-                  <option selected value="90">01:30</option>
-                  <option value="120">02:00</option>
-                  <option value="180">03:00</option>
-                </select>
-              </div>
-            </td>
-            <td>Rest</td>
-            <td>
-              <div class="selectWrapper">
-                <select
-                  name="rest-time"
-                  id="rest-time"
-                  onchange="changeRest(this)"
-                  class="selectBox"
-                >
-                  <option value="10">00:10</option>
-                  <option selected value="30">00:30</option>
-                  <option value="60">01:00</option>
-                  <option value="90">01:30</option>
-                  <option value="120">02:00</option>
-                  <option value="180">03:00</option>
-                </select>
-              </div>
-            </td>
-            <td>
-              <div id="data">.</div>
-            </td>
-          </tr>
-        </table>
-      </footer>
-    </div>
+    <footer>
+      <table class="footer-table">
+        <tr>
+          <td>
+            <span id="pause">.</span>
+          </td>
+          <td>
+            <span id="stop">⛔</span>
+          </td>
+          <td>Workout</td>
+          <td>
+            <div class="selectWrapper">
+              <select name="workout-time" id="workout-time" onchange="changeWorkout(this)" class="selectBox">
+                <option value="10">00:10</option>
+                <option value="30">00:30</option>
+                <option value="60">01:00</option>
+                <option selected value="90">01:30</option>
+                <option value="120">02:00</option>
+                <option value="180">03:00</option>
+              </select>
+            </div>
+          </td>
+          <td>Rest</td>
+          <td>
+            <div class="selectWrapper">
+              <select name="rest-time" id="rest-time" onchange="changeRest(this)" class="selectBox">
+                <option value="10">00:10</option>
+                <option selected value="30">00:30</option>
+                <option value="60">01:00</option>
+                <option value="90">01:30</option>
+                <option value="120">02:00</option>
+                <option value="180">03:00</option>
+              </select>
+            </div>
+          </td>
+          <td>
+            <div id="data" style="display: none">.</div>
+          </td>
+        </tr>
+      </table>
+    </footer>
+  </div>
 
-    <script src="app.js"></script>
-  </body>
+  <script src="app.js"></script>
+</body>
+
 </html>

@@ -2,16 +2,35 @@ body {
   text-align: center;
   /* padding: 10px; */
   font-family: "Courier New", Courier, monospace;
-  background-color: bisque;
+  background-color: #cccccc;
 
   /* font: 110%/1.4 system-ui; */
   /* margin: 0; */
   /* padding: 10rem 2rem 50rem; */
 }
 
+.circlediv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #555; */
+  border: 7px solid black;
+  color: black;
+  min-width: 1em;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.circlediv:before {
+  content: "";
+  float: left;
+  width: auto;
+  padding-bottom: 100%;
+}
+
 #time {
-  font-size: 142px;
-  /* font-weight: bold; */
+  font-size: 80px;
+  font-weight: bold;
   color: green;
 }
 
@@ -74,5 +93,5 @@ h1 {
 }
 
 td {
-    vertical-align: middle;
+  vertical-align: middle;
 }
